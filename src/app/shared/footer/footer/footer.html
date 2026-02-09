@@ -1,0 +1,142 @@
+<footer class="footer ">
+  <!-- Main Footer -->
+  <div class="footer-main ml-10">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Column 1: About -->
+        <div class="footer-col">
+          <div class="footer-logo">
+            <div class="logo-icon">
+             <img [src]="logo" alt="">
+            </div>
+            <div class="logo-text ">
+
+              <span class="logo-brand">GRACE TRAVEL</span>
+              <span class="logo-tagline">Solution Immigration</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Votre partenaire de confiance pour tous vos projets de voyage et d'immigration.
+            Nous vous accompagnons de A à Z avec professionnalisme et sérénité.
+          </p>
+          <div class="social-links">
+            <a *ngFor="let social of socialLinks"
+               [href]="social.url"
+               target="_blank"
+               class="social-link">
+              <i [class]="social.icon"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col">
+          <h3 class="footer-title">Liens Rapides</h3>
+          <ul class="footer-links">
+            <li *ngFor="let link of quickLinks">
+              <a [routerLink]="link.link">
+                <i class="fas fa-chevron-right"></i>
+                {{ link.label }}
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Services -->
+        <div class="footer-col">
+          <h3 class="footer-title">Nos Services</h3>
+          <ul class="footer-links">
+            <li *ngFor="let service of services">
+              <a [routerLink]="service.link">
+                <i class="fas fa-chevron-right"></i>
+                {{ service.label }}
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Visa -->
+        <div class="footer-col">
+          <h3 class="footer-title">Visas</h3>
+          <ul class="footer-links">
+            <li *ngFor="let visa of visaLinks">
+              <a [routerLink]="visa.link">
+                <i class="fas fa-chevron-right"></i>
+                {{ visa.label }}
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Contact & Newsletter -->
+        <div class="footer-col">
+          <h3 class="footer-title">Contact</h3>
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <a [href]="'tel:' + contactInfo.phone">{{ contactInfo.phone }}</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <a [href]="'mailto:' + contactInfo.email">{{ contactInfo.email }}</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>{{ contactInfo.address }}</span>
+            </div>
+          </div>
+
+          <button class="whatsapp-btn" (click)="openWhatsApp()">
+            <i class="fab fa-whatsapp"></i>
+            <span>WhatsApp</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Newsletter Section -->
+  <div class="footer-newsletter ">
+    <div class="container">
+      <div class="newsletter-content">
+        <div class="newsletter-text pl-10">
+          <h3>Newsletter</h3>
+          <p>Recevez nos offres exclusives et conseils voyage</p>
+        </div>
+        <form class="newsletter-form" (ngSubmit)="subscribeNewsletter()">
+          <input type="email"
+                 [(ngModel)]="newsletterEmail"
+                 name="email"
+                 placeholder="Votre email"
+                 required
+                 class="newsletter-input">
+          <button type="submit" class="newsletter-btn">
+            <i class="fas fa-paper-plane"></i>
+            <span>S'abonner</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Footer -->
+  <div class="footer-bottom">
+    <div class="container  pl-10">
+      <div class="footer-bottom-content">
+        <p class="copyright">
+          © {{ currentYear }} Grace Travel. Tous droits réservés.
+        </p>
+        <div class="footer-bottom-links">
+          <a routerLink="/mentions-legales">Mentions légales</a>
+          <span>•</span>
+          <a routerLink="/politique-confidentialite">Politique de confidentialité</a>
+          <span>•</span>
+          <a routerLink="/cgv">CGV</a>
+        </div>
+        <p class="credits">
+          Développé avec <i class="fas fa-heart"></i> par <strong>MbemNova</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

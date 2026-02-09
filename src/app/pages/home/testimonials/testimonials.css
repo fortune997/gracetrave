@@ -1,0 +1,46 @@
+.testimonials {
+  padding: 80px 10%;
+  background: #f8f9fb;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 32px;
+  margin-bottom: 50px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.message {
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.card h4 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.card span {
+  font-size: 14px;
+  color: #777;
+}

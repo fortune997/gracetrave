@@ -1,0 +1,12 @@
+<section class="testimonials">
+  <h2>Ils nous font confiance</h2>
+
+  <div class="cards">
+    <div class="card" *ngFor="let t of testimonials">
+      <img [src]="t.image" alt="{{ t.name }}">
+      <p class="message">“{{ t.message }}”</p>
+      <h4>{{ t.name }}</h4>
+      <span>{{ t.role }}</span>
+    </div>
+  </div>
+</section>

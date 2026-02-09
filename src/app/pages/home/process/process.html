@@ -1,0 +1,52 @@
+<section class="bg-gray-50 py-20">
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- TITRE -->
+    <div class="text-center mb-14">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900">
+        Notre processus d’obtention de visa
+      </h2>
+      <p class="text-gray-600 mt-3 max-w-2xl mx-auto">
+        Un accompagnement clair, structuré et sécurisé de A à Z.
+      </p>
+    </div>
+
+    <!-- ÉTAPES -->
+    <div class="grid md:grid-cols-5 gap-6">
+      @for (step of steps; track step.step) {
+        <div class="bg-white shadow rounded-xl p-6 text-center relative">
+
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2
+                      bg-red-600 text-white w-10 h-10 rounded-full
+                      flex items-center justify-center font-bold">
+            {{ step.step }}
+          </div>
+
+          <div class="text-4xl mt-8 mb-4">
+            {{ step.icon }}
+          </div>
+
+          <h3 class="font-semibold text-lg text-blue-900 mb-2">
+            {{ step.title }}
+          </h3>
+
+          <p class="text-sm text-gray-600">
+            {{ step.desc }}
+          </p>
+        </div>
+      }
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-14">
+      <a
+        routerLink="/contact"
+        class="inline-block bg-red-600 text-white px-8 py-4 rounded-full
+               font-semibold hover:bg-red-700 transition"
+      >
+        Démarrer mon dossier visa
+      </a>
+    </div>
+
+  </div>
+</section>

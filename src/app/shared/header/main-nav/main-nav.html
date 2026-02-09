@@ -1,0 +1,78 @@
+<nav class="bg-white shadow">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex items-center justify-between h-20">
+
+      <!-- LOGO -->
+      <a routerLink="/" class="flex items-center gap-2">
+        <img [src]="image" class="h-12" alt="Grace Travel">
+        <div class="hidden sm:block">
+          <p class="font-bold text-red-600 leading-none">GRACE TRAVEL</p>
+          <p class="text-xs text-blue-900">Solution Immigration</p>
+        </div>
+      </a>
+
+      <!-- MENU DESKTOP -->
+      <div class="hidden lg:flex items-center gap-8 font-medium">
+        <a routerLink="/" class="text-red-600 border-b-2 border-red-600 pb-1">
+          Accueil
+        </a>
+
+        <!-- DROPDOWN SERVICES -->
+        <div class="relative">
+          <button
+            (click)="toggleServices()"
+            class="hover:text-red-600 flex items-center gap-1"
+          >
+            Services
+            <span>▾</span>
+          </button>
+
+          @if (servicesOpen()) {
+            <div class="absolute top-full mt-3 w-64 bg-white shadow-lg border rounded">
+              <a routerLink="/visa" class="block px-4 py-3 hover:bg-gray-100">Visa & Immigration</a>
+              <a routerLink="/billetterie" class="block px-4 py-3 hover:bg-gray-100">Billetterie</a>
+              <a routerLink="/assurance" class="block px-4 py-3 hover:bg-gray-100">Assurance Voyage</a>
+              <a routerLink="/formations" class="block px-4 py-3 hover:bg-gray-100">Formations aéronautiques</a>
+              <a routerLink="/colis" class="block px-4 py-3 hover:bg-gray-100">Colis Express</a>
+            </div>
+          }
+        </div>
+
+        <a routerLink="/destinations" class="hover:text-red-600">Destinations</a>
+        <a routerLink="/boutique" class="hover:text-red-600">Boutique</a>
+        <a routerLink="/contact" class="hover:text-red-600">Contact</a>
+      </div>
+
+      <!-- SEARCH -->
+      <div class="hidden lg:flex items-center">
+        <input
+          type="text"
+          placeholder="Rechercher..."
+          class="border border-gray-300 px-3 py-2 rounded-l outline-none"
+        />
+        <button class="bg-red-600 text-white px-4 py-2 rounded-r w-16">
+        <img [src]="recherche" alt="">
+        </button>
+      </div>
+
+      <!-- BURGER -->
+      <button
+        class="lg:hidden text-2xl"
+        (click)="toggleMobile()"
+      >
+        ☰
+      </button>
+    </div>
+  </div>
+
+  <!-- MENU MOBILE -->
+  @if (mobileOpen()) {
+    <div class="lg:hidden bg-white border-t">
+      <a routerLink="/" class="block px-4 py-3 border-b">Accueil</a>
+      <a routerLink="/services" class="block px-4 py-3 border-b">Services</a>
+      <a routerLink="/destinations" class="block px-4 py-3 border-b">Destinations</a>
+      <a routerLink="/boutique" class="block px-4 py-3 border-b">Boutique</a>
+      <a routerLink="/contact" class="block px-4 py-3">Contact</a>
+    </div>
+  }
+</nav>
