@@ -1,1 +1,95 @@
-<p>contact works!</p>
+<section class="bg-gray-50 py-16">
+  <div class="max-w-7xl mx-auto px-4 grid gap-12 lg:grid-cols-2">
+
+    <!-- INFOS CONTACT -->
+    <div>
+      <h2 class="text-3xl font-bold text-blue-900 mb-6">
+        Contactez Grace Travel
+      </h2>
+
+      <p class="text-gray-600 mb-8">
+        Besoin d’un accompagnement pour votre voyage, visa, assurance ou formation ?
+        Notre équipe est à votre écoute.
+      </p>
+
+      <ul class="space-y-4 text-gray-700">
+        <li>📍 Olezoa – Ambassade de France, Yaoundé</li>
+        <li>📞 +237 6 96 69 31 83</li>
+        <li>✉️ gracetravelcabinetdeconseil@gmail.com</li>
+        <li>🕒 Lun – Ven : 8h00 – 17h00</li>
+      </ul>
+
+      <!-- WhatsApp -->
+      <a
+        href="https://wa.me/237696693183"
+        target="_blank"
+        class="inline-block mt-6 bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700 transition"
+      >
+        Contacter via WhatsApp
+      </a>
+    </div>
+
+    <!-- FORMULAIRE -->
+    <div class="bg-white shadow-lg rounded-lg p-8">
+      <h3 class="text-xl font-semibold text-blue-900 mb-6">
+        Envoyer un message
+      </h3>
+
+      <form (ngSubmit)="submit()" class="space-y-5">
+
+        <input
+          type="text"
+          placeholder="Nom complet"
+          [(ngModel)]="form.name"
+          name="name"
+          required
+          class="w-full border px-4 py-3 rounded"
+        />
+
+        <input
+          type="email"
+          placeholder="Adresse email"
+          [(ngModel)]="form.email"
+          name="email"
+          required
+          class="w-full border px-4 py-3 rounded"
+        />
+
+        <input
+          type="tel"
+          placeholder="Téléphone"
+          [(ngModel)]="form.phone"
+          name="phone"
+          class="w-full border px-4 py-3 rounded"
+        />
+
+        <input
+          type="text"
+          placeholder="Sujet"
+          [(ngModel)]="form.subject"
+          name="subject"
+          class="w-full border px-4 py-3 rounded"
+        />
+
+        <textarea
+          rows="4"
+          placeholder="Votre message"
+          [(ngModel)]="form.message"
+          name="message"
+          required
+          class="w-full border px-4 py-3 rounded"
+        ></textarea>
+
+        <button
+
+          type="submit"
+          class="w-full bg-red-600 text-white py-3 rounded hover:bg-red-700 transition"
+        >
+          Envoyer le message
+        </button>
+
+      </form>
+    </div>
+
+  </div>
+</section>

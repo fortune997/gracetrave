@@ -1,1 +1,88 @@
-<p>billetterie works!</p>
+<!-- HERO -->
+<section class="bg-gray-100 py-20 px-6 text-center">
+  <h1 class="text-4xl md:text-5xl font-bold mb-4">
+    Billetterie Aérienne
+  </h1>
+  <p class="max-w-2xl mx-auto text-gray-600 text-lg">
+    Réservez vos billets d’avion facilement avec un accompagnement
+    personnalisé et des tarifs adaptés à vos besoins.
+  </p>
+
+  <button
+  routerLink="/contact"
+    class="mt-8 px-8 py-4 bg-black text-white rounded-xl hover:bg-gray-800 transition"
+  >
+    Faire une demande
+  </button>
+</section>
+
+<!-- SERVICES -->
+<section class="py-20 px-6 max-w-7xl mx-auto">
+  <h2 class="text-3xl font-bold text-center mb-12">
+    Nos services de billetterie
+  </h2>
+
+  <div class="grid md:grid-cols-3 gap-8">
+    <div
+      *ngFor="let service of services"
+      class="bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden"
+    >
+      <img
+        [src]="service.image"
+        alt=""
+        class="h-48 w-full object-cover"
+      />
+
+      <div class="p-6">
+        <h3 class="text-xl font-semibold mb-2">
+          {{ service.title }}
+        </h3>
+        <p class="text-gray-600">
+          {{ service.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="bg-gray-50 py-20 px-6">
+  <h2 class="text-3xl font-bold text-center mb-12">
+    Comment ça fonctionne
+  </h2>
+
+  <div class="max-w-4xl mx-auto grid md:grid-cols-4 gap-6">
+    <div
+      *ngFor="let step of steps; let i = index"
+      class="bg-white p-6 rounded-xl shadow text-center"
+    >
+      <div
+        class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-black text-white font-bold"
+      >
+        {{ i + 1 }}
+      </div>
+
+      <p class="font-medium">{{ step }}</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="py-20 px-6 text-center">
+  <h2 class="text-3xl font-bold mb-4">
+    Prêt à réserver votre billet ?
+  </h2>
+
+  <p class="text-gray-600 max-w-xl mx-auto mb-8">
+    Notre équipe vous accompagne de la demande jusqu’à la réception
+    de votre billet.
+  </p>
+
+  <button
+  routerLink="/contact"
+    class="px-10 py-4 bg-black text-white rounded-xl hover:bg-gray-800 transition"
+  >
+
+    Lancer une réservation
+  </button>
+</section>

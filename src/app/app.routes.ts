@@ -2,11 +2,11 @@ import { Routes } from '@angular/router';
 import { Contact } from './pages/contact/contact';
 import { Colis } from './pages/colis/colis';
 import { Formations } from './pages/formations/formations';
-import { Assurance } from './pages/assurance/assurance';
-import { Billetterie } from './pages/billetterie/billetterie';
 import { VisaPage } from './pages/visa/visa';
 import { HomePage } from './pages/home/home/home';
 import { Destinations } from './pages/home/destinations/destinations';
+import { Billetterie } from './pages/billetterie/billetterie';
+import { Assurance } from './pages/assurance/assurance';
 
 
 export const routes: Routes = [

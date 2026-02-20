@@ -1,11 +1,25 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './contact.html',
-  styleUrl: './contact.css',
 })
 export class Contact {
 
+  form = {
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  };
+
+  submit() {
+    console.log('Message envoyé :', this.form);
+    alert('Votre message a bien été envoyé. Nous vous contacterons rapidement.');
+  }
 }
